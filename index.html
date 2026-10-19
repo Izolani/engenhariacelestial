@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Engenharia Celestial – As Obras-Primas do Criador | Antonio Orlando Izolani</title>
+  <meta name="description" content="Uma jornada pela precisão divina no universo, na Bíblia e em você. E-book de Antonio Orlando Izolani sobre fé e ciência.">
+  <meta property="og:title" content="A Engenharia Celestial – As Obras-Primas do Criador">
+  <meta property="og:description" content="Uma jornada pela precisão divina no universo, na Bíblia e em você.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/capa.png">
+  <style>
+    :root {
+      --azul-noite: #0b1630;
+      --azul-medio: #13224a;
+      --dourado: #d4af37;
+      --dourado-claro: #f1d675;
+      --branco: #f5f7fb;
+      --cinza: #b8c2d9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--azul-noite);
+      color: var(--branco);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    /* Estrelas de fundo */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 20% 30%, #fff8, transparent),
+        radial-gradient(1px 1px at 70% 60%, #fff6, transparent),
+        radial-gradient(2px 2px at 40% 80%, #f1d67588, transparent),
+        radial-gradient(1px 1px at 85% 15%, #fff7, transparent),
+        radial-gradient(1px 1px at 10% 90%, #fff5, transparent);
+      z-index: -1;
+      animation: brilhar 6s ease-in-out infinite alternate;
+    }
+    @keyframes brilhar { from { opacity: .6; } to { opacity: 1; } }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 22px; }
+    section { padding: 80px 0; }
+    h1, h2, h3 { font-weight: normal; line-height: 1.25; }
+    h2 { font-size: 2rem; color: var(--dourado-claro); text-align: center; margin-bottom: 20px; }
+    .destaque { color: var(--dourado); }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+      color: var(--azul-noite);
+      padding: 14px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 6px 20px #d4af3755;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px #d4af3788; }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+    }
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-texto .kicker {
+      color: var(--dourado);
+      font-family: Arial, sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: .85rem;
+    }
+    .hero-texto h1 { font-size: 3rem; margin: 14px 0; }
+    .hero-texto .subtitulo { font-size: 1.25rem; color: var(--dourado-claro); font-style: italic; }
+    .hero-texto .versiculo {
+      margin: 24px 0 30px;
+      padding-left: 18px;
+      border-left: 3px solid var(--dourado);
+      color: var(--cinza);
+      font-style: italic;
+    }
+    .hero-capa { text-align: center; }
+    .hero-capa img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 20px 50px #000a, 0 0 40px #d4af3733;
+    }
+    .capa-fallback {
+      display: none;
+      width: 300px;
+      height: 420px;
+      margin: 0 auto;
+      border-radius: 10px;
+      background: linear-gradient(160deg, #1d3a7a, var(--azul-noite));
+      border: 2px solid var(--dourado);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .capa-fallback span { font-size: 1.6rem; color: var(--dourado-claro); }
+
+    /* Sobre o livro */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .card {
+      background: var(--azul-medio);
+      border: 1px solid #d4af3733;
+      border-radius: 14px;
+      padding: 30px 24px;
+      transition: transform .3s, border-color .3s;
+    }
+    .card:hover { transform: translateY(-6px); border-color: var(--dourado); }
+    .card .icone { font-size: 2rem; margin-bottom: 12px; }
+    .card h3 { color: var(--dourado-claro); margin-bottom: 10px; font-size: 1.3rem; }
+    .card p { color: var(--cinza); font-size: .97rem; }
+    .lead { max-width: 760px; margin: 0 auto; text-align: center; color: var(--cinza); font-size: 1.1rem; }
+
+    /* Capítulos */
+    .capitulos { max-width: 760px; margin: 30px auto 0; list-style: none; }
+    .capitulos li {
+      padding: 14px 0;
+      border-bottom: 1px solid #ffffff1a;
+      display: flex;
+      gap: 14px;
+    }
+    .capitulos li strong { color: var(--dourado); min-width: 120px; font-weight: normal; }
+    .apendices { text-align: center; color: var(--cinza); margin-top: 30px; font-size: .97rem; }
+
+    /* Para quem é */
+    .perfis {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 860px;
+      margin: 30px auto 0;
+    }
+    .perfis div {
+      background: var(--azul-medio);
+      padding: 20px 22px;
+      border-radius: 12px;
+      border-left: 3px solid var(--dourado);
+      color: var(--cinza);
+    }
+
+    /* Autor */
+    .autor {
+      background: linear-gradient(180deg, transparent, #13224a88, transparent);
+    }
+    .autor .container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .autor img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--dourado);
+      box-shadow: 0 0 35px #d4af3755;
+    }
+    .autor .nome { color: var(--dourado-claro); font-size: 1.6rem; margin-bottom: 14px; }
+    .autor p { color: var(--cinza); text-align: justify; }
+
+    /* Oferta */
+    .oferta { text-align: center; }
+    .preco-card {
+      max-width: 520px;
+      margin: 30px auto 0;
+      background: var(--azul-medio);
+      border: 2px solid var(--dourado);
+      border-radius: 18px;
+      padding: 40px 30px;
+      box-shadow: 0 0 50px #d4af3733;
+    }
+    .preco-card .selo {
+      font-family: Arial, sans-serif;
+      background: var(--dourado);
+      color: var(--azul-noite);
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: .8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .preco-card .lancamento { margin-top: 20px; color: var(--cinza); font-family: Arial, sans-serif; }
+    .preco-card .valor {
+      font-size: 3.2rem;
+      color: var(--dourado-claro);
+      margin: 6px 0;
+    }
+    .preco-card .apos { color: var(--cinza); font-size: .95rem; }
+    .preco-card .btn { margin-top: 26px; width: 100%; }
+    .garantia {
+      margin-top: 18px;
+      font-family: Arial, sans-serif;
+      color: var(--cinza);
+      font-size: .9rem;
+    }
+    .entrega {
+      margin-top: 8px;
+      font-family: Arial, sans-serif;
+      color: var(--cinza);
+      font-size: .9rem;
+    }
+
+    /* Nota IA */
+    .nota-ia {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: .8rem;
+      color: #8f9bb8;
+      margin-top: 30px;
+    }
+
+    /* FAQ */
+    .faq { max-width: 760px; margin: 30px auto 0; }
+    details {
+      background: var(--azul-medio);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      border: 1px solid #d4af3722;
+    }
+    summary {
+      cursor: pointer;
+      padding: 18px 22px;
+      color: var(--dourado-claro);
+      font-size: 1.05rem;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: " +"; color: var(--dourado); float: right; }
+    details[open] summary::after { content: " –"; }
+    details p { padding: 0 22px 18px; color: var(--cinza); }
+
+    /* Rodapé */
+    footer {
+      border-top: 1px solid #d4af3733;
+      padding: 40px 0;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: var(--cinza);
+      font-size: .9rem;
+    }
+    footer .redes a { color: var(--dourado); text-decoration: none; margin: 0 12px; }
+    footer .redes a:hover { text-decoration: underline; }
+
+    /* Animação ao rolar */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visivel { opacity: 1; transform: none; }
+
+    /* Responsivo */
+    @media (max-width: 860px) {
+      .hero .container, .autor .container { grid-template-columns: 1fr; text-align: center; }
+      .hero-texto h1 { font-size: 2.2rem; }
+      .hero-texto .versiculo { border-left: none; padding-left: 0; }
+      .autor img { margin: 0 auto; }
+      .autor p { text-align: center; }
+      .cards, .perfis { grid-template-columns: 1fr; }
+      .capitulos li { flex-direction: column; gap: 4px; }
+      h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-texto">
+        <p class="kicker">E-book</p>
+        <!-- Título e subtítulo do e-book -->
+        <h1>A Engenharia <span class="destaque">Celestial</span></h1>
+        <p class="subtitulo">As Obras-Primas do Criador</p>
+        <p class="versiculo">
+          "Os céus declaram a glória de Deus e o firmamento anuncia a obra das suas mãos."<br>
+          — Salmo 19:1
+        </p>
+        <!-- SUBSTITUA pelo link real de compra no Hotmart -->
+        <a href="#oferta" class="btn">Quero ler agora</a>
+      </div>
+
+      <div class="hero-capa">
+        <!-- Capa do e-book: arquivo images/capa.png -->
+        <img src="images/capa.png" alt="Capa do e-book A Engenharia Celestial – As Obras-Primas do Criador"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <!-- Fallback caso a imagem não seja encontrada -->
+        <div class="capa-fallback">
+          <span>A Engenharia Celestial</span>
+          <p>As Obras-Primas do Criador</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== SOBRE O LIVRO ===== -->
+  <section>
+    <div class="container">
+      <h2 class="reveal">Sobre o livro</h2>
+      <p class="lead reveal">
+        Fé e ciência não são inimigas irreconciliáveis, mas duas janelas voltadas para o mesmo palácio.
+        A ciência responde ao "como"; a Bíblia responde ao "porquê".
+      </p>
+
+      <div class="cards">
+        <div class="card reveal">
+          <div class="icone">🌌</div>
+          <h3>Engenharia do universo</h3>
+          <p>O ajuste fino das constantes da física, as leis que sustentam o cosmos e a Terra como um projeto de localização.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icone">📜</div>
+          <h3>Grandes obras da Bíblia</h3>
+          <p>A Arca de Noé, o Tabernáculo, o Templo de Salomão e a Torre de Babel, lidos à luz da engenharia e da fé.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icone">🧬</div>
+          <h3>Você é uma obra-prima</h3>
+          <p>O olho, o coração, o cérebro e o DNA, e o que o Salmo 139 revela sobre a formação de cada ser humano.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== O QUE VOCÊ VAI ENCONTRAR ===== -->
+  <section>
+    <div class="container">
+      <h2 class="reveal">O que você vai encontrar</h2>
+      <ul class="capitulos reveal">
+        <li><strong>Introdução</strong> O engenheiro por trás de tudo</li>
+        <li><strong>Capítulo 1</strong> O engenheiro do universo</li>
+        <li><strong>Capítulo 2</strong> Grandes obras da Bíblia</li>
+        <li><strong>Capítulo 3</strong> Você é uma obra-prima</li>
+        <li><strong>Capítulo 4</strong> O que a engenharia celestial revela sobre Deus</li>
+        <li><strong>Conclusão</strong> O projeto da sua vida</li>
+      </ul>
+      <p class="apendices reveal">
+        Inclui apêndices técnicos (termodinâmica, constante cosmológica, ressonância do carbono,
+        metrologia e acústica do Templo e fisiologia humana), glossário, índice de referências bíblicas
+        e referências científicas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== PARA QUEM É ===== -->
+  <section>
+    <div class="container">
+      <h2 class="reveal">Para quem é este livro</h2>
+      <div class="perfis reveal">
+        <div>Curiosos por ciência que buscam um diálogo com a fé.</div>
+        <div>Leitores de temas bíblicos e devocionais.</div>
+        <div>Estudantes de engenharia, química e biologia.</div>
+        <div>Líderes e professores que querem ilustrar a fé com dados científicos.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE O AUTOR ===== -->
+  <section class="autor">
+    <div class="container">
+      <!-- Foto do autor: arquivo images/foto.png -->
+      <img src="images/foto.png" alt="Foto do autor Dr. Antonio Orlando Izolani">
+      <div class="reveal">
+        <h2 style="text-align:left;">Sobre o Autor</h2>
+        <p class="nome">Dr. Antonio Orlando Izolani</p>
+        <p>Dr. Antonio Orlando Izolani é Licenciado em Química, Mestre em Química Inorgânica e Doutor em Geoquímica Ambiental, pesquisador, educador e desenvolvedor de projetos cristãos e educacionais. Com sólida formação interdisciplinar, tem dedicado sua trajetória intelectual e ministerial à convergência construtiva entre metodologia científica, engenharia de processos, inovação tecnológica e o compromisso irrenunciável com a proclamação das Escrituras Sagradas. Atua ativamente na instrumentalização de líderes e comunidades de fé para a expansão sustentável e ordenada da missão do Reino de Deus.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OFERTA ===== -->
+  <section class="oferta" id="oferta">
+    <div class="container">
+      <h2 class="reveal">Garanta o seu exemplar</h2>
+      <div class="preco-card reveal">
+        <span class="selo">Oferta de lançamento</span>
+        <p class="lancamento">Valor de lançamento (14 dias)</p>
+        <p class="valor">R$ 22,00</p>
+        <p class="apos">Após o período de lançamento: R$ 30,00</p>
+        <!-- SUBSTITUA pelo link real de compra no Hotmart -->
+        <a href="https://pay.hotmart.com/SEU-LINK" class="btn" target="_blank" rel="noopener">Comprar agora</a>
+        <p class="garantia">🛡️ Garantia de 7 dias</p>
+        <p class="entrega">📥 Acesso imediato ao e-book em PDF após a compra</p>
+      </div>
+      <p class="nota-ia reveal">
+        Transparência: este e-book foi elaborado com o apoio de Inteligência Artificial (IA), com revisão do autor.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== PERGUNTAS FREQUENTES ===== -->
+  <section>
+    <div class="container">
+      <h2 class="reveal">Perguntas frequentes</h2>
+      <div class="faq reveal">
+        <details>
+          <summary>Para quem é este e-book?</summary>
+          <p>Para quem se interessa pela relação entre fé e ciência, leitores bíblicos e devocionais, estudantes das áreas técnicas e líderes que desejam ilustrar a fé com dados científicos.</p>
+        </details>
+        <details>
+          <summary>Preciso ter formação em ciências ou teologia para entender?</summary>
+          <p>Não. A linguagem é acessível e o livro conta com um glossário ao final para os termos técnicos.</p>
+        </details>
+        <details>
+          <summary>Qual é o formato do material?</summary>
+          <p>O e-book está em PDF, para leitura em computador, tablet e celular.</p>
+        </details>
+        <details>
+          <summary>Como recebo o e-book após a compra?</summary>
+          <p>O acesso é enviado pela plataforma de pagamento logo após a confirmação da compra.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Antonio Orlando Izolani · A Engenharia Celestial – As Obras-Primas do Criador</p>
+      <!-- SUBSTITUA pelos links reais de Instagram e YouTube -->
+      <p class="redes" style="margin-top:14px;">
+        <a href="https://instagram.com/SEU-USUARIO" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@SEU-CANAL" target="_blank" rel="noopener">YouTube</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Animação ao rolar a página
+    const elementos = document.querySelectorAll('.reveal');
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visivel');
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    elementos.forEach((el) => observador.observe(el));
+  </script>
+</body>
+</html>
